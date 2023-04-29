@@ -9,7 +9,6 @@ window.state("zoomed")
 window.title("STEAM")
 window.geometry("340x440")
 window.iconbitmap("img/steam_logo.ico")
-#burada framelərimi yaradıram
 frame1 = tkinter.Frame(bg="#333333")
 frame2 = tkinter.Frame(bg="#0dfc85")
 frame3= tkinter.Frame(bg="#ad14db")
@@ -21,7 +20,6 @@ frame8= tkinter.Frame(bg="#fa4225")
 frame9= tkinter.Frame(bg="#333333")
 frame10= tkinter.Frame(bg="#1dcf0c")
 frame11 = tkinter.Frame(bg="#f00514")
-#burada listboxsumun içinə bütün oyunlarımın siyahısını verirem
 Lb = tkinter.Listbox(frame1)
 Lb.insert(1, 'Among us ')
 Lb.insert(2, 'Pubg mobile ')
@@ -38,7 +36,6 @@ Lb.insert(13, ' Hogwarst Legacy')
 Lb.place(x=10, y=570)
 Lb.configure(height=25, width=60)
 card_number = "55555"
-#oyun siyahımı yaratmışam və sort ilə çeşitliyirem
 game_list = ["among us ", " pubg mobile ", " clash of clans ", " fortinite ", " brawl stars ", " minecraft ", " monopoly "," eFootball2023 "," Hay Day "," Clash Royale "," Mortal Kombat "," Hogwarst Legacy "]
 with open("GAME.txt","w") as file :
     file.writelines(game_list)
@@ -60,7 +57,7 @@ btn2.place(x=1820, y=0)
 money = tkinter.Spinbox(frame4, to=10, width=5)
 money.place(x=890, y=430)
 
-#balance() da get ilə cartda olan məlumatı alib dəyisənə yazıb car_number berraber olub olmadığını yoxlayıram
+
 def balance():
     get_metod = username11_entry.get()
     if get_metod == card_number:
@@ -69,8 +66,6 @@ def balance():
         messagebox.showerror("Not equal")
     username11_entry.delete(0, "end")
 
-#username və passworda melumatı get-dən alıram və ifdə boşluq olub olmadığını yoxlayıram qeydiyyatdan girisin
-#eyni olub olmadığını yoxlayıram Text_name.dat faylını sətr 477 yaratmışam onu qeydiyyat üçün yaratmışam
 def save_info():
     username = username_entry.get()
     password = password_entry.get()
@@ -94,8 +89,7 @@ def save_info():
         messagebox.showinfo("REGISTRATION SUCCESSFUL")
 counter = 0
 total_sum = 0
-#burda oyunların sayını getdən alıb oyunların qiymətinə vururam money20 də isə 1 spinboxda qeyd etdiqdə 10 dollar
-#balansa pul yüklənir daha sonra total_bills də bütün balansımdan oyunların cəmini çıxıram
+
 def button_clicked():
     global BALANCE, money, counter, total_sum
     efootball = int(efoot.get()) * 100
@@ -511,7 +505,6 @@ def registration():
 kec_btn = tkinter.Button(window,text='Rekord', fg="black",activebackground="green",font="Arial, 15" ,command=registration)
 kec_btn.place(x=200, y=200)
 
-#burda login label və entrylərini düzəltmişəm
 login_label = tkinter.Label(frame1,text="Login",bg= "#333333", fg="#FF3399", font ="Arial, 30")
 username_label = tkinter.Label(frame1,text="Usarname:", bg= "#333333", fg="#FFFFFF", font =("Arial, 16"))
 username_entry = tkinter.Entry(frame1,font =("Arial, 16"))
@@ -526,7 +519,7 @@ username_entry.place(x= 1120, y= 140)
 password_label.grid(row=2, column=0)
 password_entry.place(x= 1120, y= 180)
 login_buton.grid(row=3, column=0,columnspan=2, pady=30)
-#burdada oyundan exit eliyib çıxması üçün quit eləmişəm
+
 def quit():
     window.quit()
 
